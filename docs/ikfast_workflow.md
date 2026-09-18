@@ -22,6 +22,10 @@ This document reconstructs the kinematics workflow used in the thesis. It is a h
 - `eelink = 12`
 - primary `freeindex = 4`
 
+### Indexing note
+
+The thesis contains inconsistent wording at this point: one sentence describes `freeindex=4` as the fourth joint, while the later selection discussion identifies it as Joint 5 under zero-based indexing. The reconstructed repository therefore keeps the numeric parameter (`freeindex=4`) as the authoritative experimental setting and flags the joint-name mapping for verification against the generated IKFast solver metadata before a rerun.
+
 ## Model inspection
 
 The thesis explicitly used OpenRAVE to load the generated COLLADA model and `openrave-robot.py` to inspect link indices. A representative historical command was:
