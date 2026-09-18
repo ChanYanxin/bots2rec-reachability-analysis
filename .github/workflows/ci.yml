@@ -1,0 +1,40 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check shell syntax
+        run: |
+          bash -n scripts/*.sh
+
+      - name: Validate YAML configs
+        run: |
+          python -m pip install --disable-pip-version-check pyyaml
+          python - <<'PY'
+          from pathlib import Path
+          import yaml
+
+          for path in sorted(Path('configs').glob('*.yaml')):
+              with path.open('r', encoding='utf-8') as f:
+                  yaml.safe_load(f)
+              print(f'validated {path}')
+          PY
+
+      - name: Confirm required documentation
+        run: |
+          test -f README.md
+          test -f docs/methodology.md
+          test -f docs/ikfast_workflow.md
+          test -f docs/experiment_design.md
+          test -f docs/results.md
+
+# This CI validates the reconstructed repository structure and helper files.
+# It intentionally does not attempt to build the legacy ROS Indigo/OpenRAVE stack.
