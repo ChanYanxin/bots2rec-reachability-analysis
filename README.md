@@ -26,7 +26,7 @@ The Bots2Rec platform was originally designed for overhead asbestos-removal task
 | Variant B | -0.5 m |
 | Variant C | -0.8 m |
 
-The robot arm is kinematically redundant (7 revolute joints for a 6D end-effector pose). Multiple IKFast free-joint configurations were evaluated, with **freeindex = 4 (Joint 5, zero-based index)** selected as the primary configuration for the controlled comparison.
+The robot arm is kinematically redundant (7 revolute joints for a 6D end-effector pose). Multiple IKFast free-joint configurations were evaluated, with **freeindex = 4** selected as the primary configuration for the controlled comparison. The thesis later maps this to Joint 5 under zero-based indexing, but an earlier sentence uses different wording; the numerical free-index setting is therefore treated as authoritative and the joint-name mapping is flagged for verification.
 
 ## Analysis pipeline
 
@@ -60,7 +60,7 @@ This repository keeps the historical workflow explicit instead of pretending the
 - IK type: `Transform6D`
 - OpenRAVE base-link index: `0`
 - OpenRAVE end-effector link index: `12`
-- Primary free index: `4`
+- Primary free index: `4` (joint-name mapping should be verified against the generated solver metadata)
 - Reuleaux reachability-map resolution: `0.09 m`
 - Ship-cutting task pose used for base-placement study:
   - position: `x=0, y=0, z=-0.7 m`
