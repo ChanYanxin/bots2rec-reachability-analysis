@@ -9,7 +9,10 @@ ikfast:
   end_effector_link_index: 12
   freeindices_evaluated: [1, 2, 3, 4]
   primary_freeindex: 4
-  indexing_note: "freeindex 4 corresponds to Joint 5 in zero-based indexing"
+  indexing_note: >
+    The thesis later associates freeindex=4 with Joint 5 under zero-based
+    indexing, while an earlier sentence calls it the fourth joint. Verify the
+    generated solver metadata before reproducing the run.
 
 reuleaux:
   reachability_resolution_m: 0.09
