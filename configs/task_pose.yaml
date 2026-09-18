@@ -1,0 +1,14 @@
+task: ship_stiffener_cutting
+frame_note: "Coordinates follow the thesis/Reuleaux experiment setup."
+position_m:
+  x: 0.0
+  y: 0.0
+  z: -0.7
+orientation_deg:
+  roll: 240.0
+  pitch: 0.0
+  yaw: 30.0
+
+purpose: >
+  End-effector pose used to query inverse reachability and candidate
+  mobile-base placements for the ship-cutting case study.
