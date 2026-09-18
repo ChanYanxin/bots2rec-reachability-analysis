@@ -1,0 +1,26 @@
+project: bots2rec_reachability_analysis
+robot:
+  manipulator_dof: 7
+  first_axis_offsets_m: [0.0, -0.2, -0.5, -0.8]
+
+ikfast:
+  ik_type: Transform6D
+  base_link_index: 0
+  end_effector_link_index: 12
+  freeindices_evaluated: [1, 2, 3, 4]
+  primary_freeindex: 4
+  indexing_note: "freeindex 4 corresponds to Joint 5 in zero-based indexing"
+
+reuleaux:
+  reachability_resolution_m: 0.09
+  outputs:
+    - reachability_map
+    - inverse_reachability_map
+    - base_placement
+    - union_map
+
+legacy_environment:
+  ubuntu: "14.04"
+  ros: Indigo
+  visualization: RViz
+  kinematics_backend: OpenRAVE/IKFast
