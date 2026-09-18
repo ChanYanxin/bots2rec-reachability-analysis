@@ -1,0 +1,43 @@
+# ROS / catkin
+build/
+devel/
+install/
+log/
+.catkin_workspace
+
+# Generated maps / databases
+*.db
+*.sqlite
+*.h5
+*.hdf5
+
+# Generated IK / build products
+*.o
+*.so
+*.a
+CMakeFiles/
+CMakeCache.txt
+
+# CAD / institute assets kept out of the public repo by default
+*.stl
+*.dae
+*.obj
+*.step
+*.stp
+
+# Editors / OS
+.vscode/
+.idea/
+*~
+.DS_Store
+Thumbs.db
+
+# Personal / archive files
+*.zip
+*.7z
+*.rar
+*.p12
+*.p7b
+*.pdf
+*.docx
+*.pptx
