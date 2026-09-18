@@ -1,5 +1,7 @@
 # Bots2Rec Reachability & Base Placement Analysis
 
+[![CI](https://github.com/ChanYanxin/bots2rec-reachability-analysis/actions/workflows/ci.yml/badge.svg)](https://github.com/ChanYanxin/bots2rec-reachability-analysis/actions/workflows/ci.yml)
+
 Portfolio reconstruction of my Bachelor's thesis project at the Institute of Mechanism Theory, Machine Dynamics and Robotics (IGMR), RWTH Aachen University.
 
 The project studies how a **7-DOF mobile manipulator** can be adapted for semi-autonomous ship-recycling tasks by changing the height of the first rotational axis and evaluating the effect on:
@@ -78,6 +80,7 @@ A second practical finding was that a single free-joint configuration does not f
 
 ```text
 .
+├── .github/workflows/       # Lightweight repository validation
 ├── configs/                 # Experiment and task-pose parameters
 ├── docs/                    # Methodology, IKFast workflow, experiment notes
 ├── scripts/                 # Reproduction helpers for the legacy toolchain
@@ -98,6 +101,10 @@ Start with:
 2. [`docs/ikfast_workflow.md`](docs/ikfast_workflow.md)
 3. [`docs/experiment_design.md`](docs/experiment_design.md)
 4. [`docs/results.md`](docs/results.md)
+
+## CI scope
+
+The GitHub Actions workflow checks shell syntax, parses the YAML experiment files, and confirms that the key documentation is present. It intentionally **does not** claim to reproduce or build the historical ROS Indigo/OpenRAVE stack.
 
 ## External tools and references
 
